@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챌리키우기</title>
+    <link rel="stylesheet" href="레벨.css">
+</head>
+<body>
+    <div class="head-container" style="position:fixed; top:0px;">
+        <div class="header">
+            <h1><a href="챌리키우기.html">CHALLYGROUND</a></h1>
+            <div class="form">
+                <input type="search" placeholder="활동가,챌린지 또는 게시물을 검색해보세요!">
+                <button onclick="filterList()" class="search-button">검색</button>
+            </div>
+        </div>
+    </div>
+    <div class="leftbar-container">
+      <div class="sidebar">
+        <a href="#" class="menu-item" onclick="showContent('home')">홈</a>
+        <a href="#" class="menu-item" onclick="showContent('issue')">소식</a>
+        <a href="#" class="menu-item" onclick="showContent('challenge')">챌린지</a>
+        <a href="#" class="menu-item" onclick="showContent('coupon')">쿠폰</a>
+        <a href="#" class="menu-item" onclick="showContent('review')">후기</a>
+        <a href="#" class="menu-item" onclick="showContent('settings')">설정</a>
+      
+    
+        <div id="settings" class="content" style="display: none;">
+          <h2>설정</h2>
+          <p>설정 페이지 내용</p>
+        </div>
+    </div>
+    <div class="coinpart"><span>coin : </span><p>0</p></div>
+    <div class="quest-buttons">
+        <button onclick="openQuestPopup()">퀘스트</button>
+    </div>
+    <div id="attendance-popup" class="popup">
+        <span class="popup-close" onclick="closePopup('attendance-popup')">X</span>
+        <p>출석체크 완료! 포인트 1점을 얻었습니다.</p>
+        <button onclick="confirmAttendance()">확인</button>
+    </div>
+  </div>
+    <div id="quest-popup" class="popup">
+        <span class="popup-close" onclick="closePopup('quest-popup')">X</span>
+        <p id="quest-text"></p>
+        <button onclick="completeQuest()">완료</button>
+    </div>
+ <div class="centerbody">
+    
+    <h1>Name.</h1>
+    <div class="level">LV. <span id="level">1</span></div>
+    <div class="circle-container">
+        <svg width="150" height="150">
+            <circle class="circle-background" cx="75" cy="75" r="65"></circle>
+            <circle class="circle-progress" cx="75" cy="75" r="65" stroke-dasharray="408" stroke-dashoffset="408"></circle>
+            <text x="75" y="50%" class="circle-text" id="level-text">달성률</text>
+            <text x="75" y="65%" class="percentage-text" id="percentage-text">0%</text>
+        </svg>
+    </div>
+    <div class="points">point: <span id="points">0</span></div>
+    <div class="progress-bar">
+        <div class="progress-bar-inner" id="progress-bar-inner"></div>
+    </div>
+    <div class="list">
+        <p>활동중인 챌린지</p>
+        <ul>
+            <li><a href='#'>name</a></li>
+            <li><a href='#'>name</a></li>
+            <li><a href='#'>name</a></li>
+        </ul>
+    </div>
+    
+</div>
+    <script src="레벨.js"></script>
+</body>
+</html>
